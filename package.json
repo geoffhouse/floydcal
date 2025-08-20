@@ -11,12 +11,14 @@
   "dependencies": {
     "@mantine/core": "^8.2.5",
     "@mantine/hooks": "^8.2.5",
+    "cheerio": "^1.1.2",
     "next": "15.5.0",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/cheerio": "^0.22.35",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
