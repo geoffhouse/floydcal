@@ -12,7 +12,7 @@ export default ($, tableElement) => {
 
     $(tableElement)
         .find("tr")
-        .each((rowIndex, row) => {
+        .each((_, row) => {
             const rowElement = $(row);
             if (rowElement.hasClass("toprow")) {
                 // it's a 'week' row - we just want the first cell

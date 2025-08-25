@@ -22,6 +22,14 @@
             "@/*": ["./src/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/services/table-parser.js"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts",
+        "src/services/table-parser.js",
+        "src/app/layout.jsx",
+        "src/app/api/school/route.js"
+    ],
     "exclude": ["node_modules"]
 }

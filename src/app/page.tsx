@@ -1,9 +1,13 @@
 import * as fs from "fs/promises";
 import path from "path";
 import fileParser from "@/services/file-parser";
+import configLoader from "@/services/config-loader";
+import PageHome from "./PageHome";
 
-export default async function HomePage() {
+export default async () => {
     const filePath = path.join(process.cwd(), "public/example.html");
+    const termData = await configLoader("terms.yml");
+    const sessionData = await configLoader("sessions.yml");
 
     let htmlString = "";
     try {
@@ -13,8 +17,7 @@ export default async function HomePage() {
         return <div>Failed to load file.</div>;
     }
 
-    const file = fileParser(htmlString);
+    const timetableFile = fileParser(htmlString);
 
-    console.log(file);
-    return <>done</>;
-}
+    return <PageHome testTimetable={timetableFile} termData={termData} sessionData={sessionData} />;
+};
