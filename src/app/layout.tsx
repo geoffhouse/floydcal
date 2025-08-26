@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ThemeRegistry from "./ThemeRegistry";
 import Header from "./Header";
 import { Box, Container, Stack } from "@mui/material";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
     title: "floydcal",
@@ -35,6 +36,7 @@ export default function RootLayout({
                             </Box>
                         </Stack>
                     </Container>
+                    <Analytics />
                 </ThemeRegistry>
             </body>
         </html>
