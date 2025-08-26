@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Link } from "@mui/material";
 
-const SimpleTechStack = () => {
+const TechStack = () => {
     const technologies = [
         {
             name: "React",
@@ -33,4 +33,4 @@ const SimpleTechStack = () => {
     );
 };
 
-export default SimpleTechStack;
+export default TechStack;

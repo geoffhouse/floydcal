@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default ({ href, label }) => {
+const HeaderLink = ({ href, label }) => {
     const pathname = usePathname();
 
     const isSelected = pathname === href;
@@ -22,3 +22,5 @@ export default ({ href, label }) => {
         </Button>
     );
 };
+
+export default HeaderLink;

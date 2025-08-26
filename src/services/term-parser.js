@@ -2,7 +2,7 @@
 
 import convertDate from "@/services/convert-date";
 
-export default async (termData, schoolYear) => {
+const termParser = async (termData, schoolYear) => {
     const result = [];
     for (let eachTerm of termData.terms) {
         const termResult = {};
@@ -51,3 +51,5 @@ export default async (termData, schoolYear) => {
     }
     return result;
 };
+
+export default termParser;

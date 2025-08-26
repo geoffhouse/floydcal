@@ -4,7 +4,7 @@ import Alert from "@mui/material/Alert";
 import CheckIcon from "@mui/icons-material/Check";
 import fileParser from "@/services/file-parser";
 
-export default ({ onFileChange }) => {
+const FileUpload = ({ onFileChange }) => {
     const fileInputRef = useRef(null);
     const [isValid, setisValid] = React.useState(null);
     const [fileDetails, setFileDetails] = React.useState({});
@@ -98,3 +98,5 @@ export default ({ onFileChange }) => {
         </>
     );
 };
+
+export default FileUpload;

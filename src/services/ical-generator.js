@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-export default (lessons) => {
+const icalGenerator = (lessons) => {
     let icalString = `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//SHFGS//floydcal//EN\r\n`;
@@ -23,3 +23,4 @@ END:VEVENT\r\n`;
 
     return icalString;
 };
+export default icalGenerator;

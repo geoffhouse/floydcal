@@ -1,19 +1,19 @@
 "use client";
 
-import { Typography, Box, Paper, Stack } from "@mui/material";
+import { Typography, Paper, Stack } from "@mui/material";
 import TechStack from "../TechStack";
 import Image from "next/image";
 import Obfuscate from "react-obfuscate";
 
-export default () => {
+const page = () => {
     return (
         <Stack spacing={2}>
             <Paper sx={{ padding: "1rem" }}>
                 <Typography variant="h5">About floydcal</Typography>
                 <Stack sx={{ textAlign: "left" }}>
                     <p>
-                        I created Floydcal for my own use, as I was tired of manually adding each lesson to my family's
-                        Google Calendar every term. If you find it useful, that's great!
+                        I created Floydcal for my own use, as I was tired of manually adding each lesson to my
+                        family&rsquo;s Google Calendar every term. If you find it useful, that&rsquo;s great!
                     </p>
                     <p>
                         This application was built using React.js and Next.js, and is deployed on Vercel. All the source
@@ -29,8 +29,8 @@ export default () => {
                     <Image src="/geoff.png" alt="Geoff House" width={200} height={200} />
                     <Stack sx={{ textAlign: "left" }}>
                         <p>
-                            Hi, I'm Geoff House! My son is a student at Sir Henry Floyd Grammar School, and I spent a
-                            few days working on this project.
+                            Hi, I&rsquo;m Geoff House! My son is a student at Sir Henry Floyd Grammar School, and I
+                            spent a few days working on this project.
                         </p>
                         <p>
                             You can contact me by email&nbsp;
@@ -43,13 +43,15 @@ export default () => {
                             &nbsp; or via <a href="https://www.facebook.com/geoffhouse">Facebook</a>
                         </p>
                         <p>
-                            If you'd like to support my work, you can buy me a coffee. It might just convince my wife to
-                            let me do this sort of thing again in the future!
+                            If you&rsquo;d like to support my work, you can buy me a coffee. It might just convince my
+                            wife to let me do this sort of thing again in the future!
                         </p>
                         <a href="https://www.buymeacoffee.com/geoffhouse" target="_blank" rel="noopener noreferrer">
-                            <img
+                            <Image
                                 src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
                                 alt="Buy Me a Coffee"
+                                width={200}
+                                height={200}
                                 style={{ height: "60px !important", width: "217px !important" }}
                             />
                         </a>
@@ -62,7 +64,7 @@ export default () => {
                 <Stack sx={{ textAlign: "left" }}>
                     <p>I have absolutely no interest in your data.</p>
                     <p>
-                        Feel free to review the code on GitHub to verify that I'm not doing anything crazy! (
+                        Feel free to review the code on GitHub to verify that I&rsquo;m not doing anything crazy! (
                         <a href="https://github.com/geoffhouse/floydcal">https://github.com/geoffhouse/floydcal</a>)
                     </p>
                     <p>
@@ -90,3 +92,5 @@ export default () => {
         </Stack>
     );
 };
+
+export default page;

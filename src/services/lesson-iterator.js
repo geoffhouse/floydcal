@@ -13,7 +13,7 @@ const convertTime = (timeString, baseDate) => {
 };
 
 // pass an array of days, and generate lessons using the timetable data
-export default (termDays, timetableFile, sessionData) => {
+const lessonIterator = (termDays, timetableFile, sessionData) => {
     const lessons = [];
 
     for (let eachDay of termDays) {
@@ -45,3 +45,5 @@ export default (termDays, timetableFile, sessionData) => {
     }
     return lessons;
 };
+
+export default lessonIterator;

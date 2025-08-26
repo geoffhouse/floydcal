@@ -2,7 +2,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { Stack, Paper, Typography } from "@mui/material";
 import HeaderLink from "./HeaderLink";
 
-export default () => {
+const Header = () => {
     return (
         <>
             <Paper elevation={0}>
@@ -23,3 +23,4 @@ export default () => {
         </>
     );
 };
+export default Header;

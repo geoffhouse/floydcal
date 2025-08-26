@@ -1,4 +1,4 @@
-export default (icalString, filename = "calendar.ics") => {
+const downloadIcal = (icalString, filename = "calendar.ics") => {
     const blob = new Blob([icalString], { type: "text/calendar;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -9,3 +9,5 @@ export default (icalString, filename = "calendar.ics") => {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 };
+
+export default downloadIcal;

@@ -7,7 +7,7 @@ import downloadIcal from "@/services/download-ical";
 import React from "react";
 import { Checkbox, Table, TableRow, TableBody, TableCell, TableHead, Button, Box } from "@mui/material";
 
-export default ({ timetableFile, termData, sessionData }) => {
+const DateSelect = ({ timetableFile, termData, sessionData }) => {
     const [yearTermData, setYearTermData] = React.useState(null);
     const [selectedTerms, setSelectedTerms] = React.useState([]);
 
@@ -170,3 +170,5 @@ export default ({ timetableFile, termData, sessionData }) => {
         </>
     );
 };
+
+export default DateSelect;

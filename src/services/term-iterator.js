@@ -1,4 +1,4 @@
-export default (termData) => {
+const termIterator = (termData) => {
     const termDays = [];
     for (let eachHalfTerm of termData) {
         // Parse the start and end dates from the 'start' and 'end' properties.
@@ -32,3 +32,5 @@ export default (termData) => {
     }
     return termDays;
 };
+
+export default termIterator;

@@ -5,7 +5,7 @@ import FileUpload from "./FileUpload";
 import Step from "./Step";
 import DateSelect from "./DateSelect";
 
-export default ({ termData, sessionData }) => {
+const PageHome = ({ termData, sessionData }) => {
     const [timetableFile, setTimetableFile] = React.useState();
 
     const handleFileChange = (file) => {
@@ -45,3 +45,4 @@ export default ({ termData, sessionData }) => {
         </Stack>
     );
 };
+export default PageHome;

@@ -1,6 +1,6 @@
 import { Box, Paper, Stack, Typography } from "@mui/material";
 
-export default ({ children, index }) => {
+const Step = ({ children, index }) => {
     return (
         <Paper
             sx={{
@@ -18,3 +18,4 @@ export default ({ children, index }) => {
         </Paper>
     );
 };
+export default Step;

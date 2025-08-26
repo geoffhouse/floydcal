@@ -1,4 +1,4 @@
-export default (headerText: string) => {
+const headerParser = (headerText: string) => {
     const regex =
         /Timetable for ([^,]+?) - Current year group: (\d+), Current registration group: (\w+)\. Timetable effective as at (\d{2}\/\d{2}\/\d{4})/;
 
@@ -20,3 +20,5 @@ export default (headerText: string) => {
     }
     throw new Error(`header could not be parsed: ${JSON.stringify(headerText)}`);
 };
+
+export default headerParser;

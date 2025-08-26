@@ -1,4 +1,4 @@
-export default (dateString) => {
+const convertDate = (dateString) => {
     const parts = dateString.split("/");
 
     const day = parseInt(parts[0], 10);
@@ -7,3 +7,5 @@ export default (dateString) => {
 
     return new Date(year, month - 1, day);
 };
+
+export default convertDate;

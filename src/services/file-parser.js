@@ -2,7 +2,7 @@ import * as cheerio from "cheerio";
 import headerParser from "@/services/header-parser";
 import tableParser from "@/services/table-parser";
 
-export default (html: string) => {
+const fileParser = (html) => {
     try {
         const $ = cheerio.load(html);
 
@@ -13,7 +13,7 @@ export default (html: string) => {
         const tableElements = $("table");
 
         // Pass each table to the service
-        const tableData: any = [];
+        const tableData = [];
         tableElements.each((_, tableElement) => {
             tableData.push(tableParser($, tableElement));
         });
@@ -23,6 +23,9 @@ export default (html: string) => {
             timetable: tableData,
         };
     } catch (error) {
+        console.log(error);
         return;
     }
 };
+
+export default fileParser;

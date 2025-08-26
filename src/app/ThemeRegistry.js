@@ -6,7 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import theme from "./theme";
 
-export default function ThemeRegistry({ children }) {
+const ThemeRegistry = ({ children }) => {
     return (
         <AppRouterCacheProvider options={{ key: "mui" }}>
             <ThemeProvider theme={theme}>
@@ -15,4 +15,5 @@ export default function ThemeRegistry({ children }) {
             </ThemeProvider>
         </AppRouterCacheProvider>
     );
-}
+};
+export default ThemeRegistry;

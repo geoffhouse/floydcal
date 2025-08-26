@@ -1,4 +1,4 @@
-export default ($, tableElement) => {
+const tableParser = ($, tableElement) => {
     const tableData = {
         week: 0,
         days: {
@@ -36,3 +36,5 @@ export default ($, tableElement) => {
         });
     return tableData;
 };
+
+export default tableParser;
