@@ -11,11 +11,11 @@ export default ({ timetableFile, termData, sessionData }) => {
     const [yearTermData, setYearTermData] = React.useState(null);
     const [selectedTerms, setSelectedTerms] = React.useState([]);
 
-    const generateIcal = (termsArray) => {
+    const generateIcal = (termsArray, filename) => {
         const termDays = termIterator(termsArray);
         const lessons = lessonIterator(termDays, timetableFile, sessionData);
         const icalData = icalGenerator(lessons);
-        downloadIcal(icalData);
+        downloadIcal(icalData, filename);
     };
 
     const handleCheckboxClicked = (checked, key) => {
@@ -39,19 +39,50 @@ export default ({ timetableFile, termData, sessionData }) => {
         }
     };
 
+    const generateFilename = (terms) => {
+        // convert name into lower case, no spaces
+        const name = timetableFile.name.toLowerCase().replace(" ", "");
+        const registrationGroup = timetableFile.registrationGroup.toLowerCase().replace(" ", "");
+
+        let termLabel = "all";
+        if (terms.length !== yearTermData.length) {
+            // now shorten term names
+            const shortenedTermNamesArray = terms.map((st) => {
+                const firstThree = st.slice(0, 3);
+                const lastThree = st.slice(-3);
+                return firstThree + lastThree;
+            });
+
+            termLabel = shortenedTermNamesArray.join("_").toLowerCase();
+        }
+
+        // now add date
+        const now = new Date();
+        const currentYear = now.getFullYear().toString().slice(-2);
+        const currentMonth = (now.getMonth() + 1).toString().padStart(2, "0");
+        const currentDay = now.getDate().toString().padStart(2, "0");
+        const timestamp = `${currentYear}${currentMonth}${currentDay}`;
+
+        // assemble filename
+        const filename = `${name}_${registrationGroup}_${termLabel}_${timestamp}.ics`;
+        return filename;
+    };
+
     const handleDownloadMultipleClicked = () => {
         const matchingTermData = yearTermData.filter((p) => {
             const key = `${p.name}${p.year}${p.half}`;
             return selectedTerms.includes(key);
         });
-        generateIcal(matchingTermData);
+        const filename = generateFilename(selectedTerms);
+        generateIcal(matchingTermData, filename);
     };
 
     const handleDownloadSingleClicked = (key) => {
         const matchingTermData = yearTermData.filter((p) => {
             return key === `${p.name}${p.year}${p.half}`;
         });
-        generateIcal(matchingTermData);
+        const filename = generateFilename([key]);
+        generateIcal(matchingTermData, filename);
     };
 
     React.useEffect(() => {

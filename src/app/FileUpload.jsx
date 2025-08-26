@@ -7,6 +7,7 @@ import fileParser from "@/services/file-parser";
 export default ({ onFileChange }) => {
     const fileInputRef = useRef(null);
     const [isValid, setisValid] = React.useState(null);
+    const [fileDetails, setFileDetails] = React.useState({});
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -16,12 +17,16 @@ export default ({ onFileChange }) => {
 
             reader.onload = (e) => {
                 const parsedFile = fileParser(e.target.result);
-
                 if (parsedFile?.name) {
                     setisValid(true);
+                    setFileDetails({
+                        name: parsedFile.name,
+                        registrationGroup: parsedFile.registrationGroup,
+                    });
                     onFileChange(parsedFile);
                 } else {
-                    setisValid(true);
+                    setisValid(false);
+                    setFileDetails({});
                     onFileChange(null);
                 }
             };
@@ -82,7 +87,7 @@ export default ({ onFileChange }) => {
             />
             {isValid === true && (
                 <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
-                    Timetable loaded ok
+                    Timetable loaded for {fileDetails.name}, registration group {fileDetails.registrationGroup}
                 </Alert>
             )}
             {isValid === false && (

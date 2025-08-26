@@ -17,7 +17,6 @@ export default () => {
                     <Stack direction="row">
                         <HeaderLink href="/" label="Home" />
                         <HeaderLink href="/about" label="About" />
-                        <HeaderLink href="/privacy" label="Privacy" />
                     </Stack>
                 </Stack>
             </Paper>

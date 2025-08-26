@@ -5,8 +5,8 @@ import FileUpload from "./FileUpload";
 import Step from "./Step";
 import DateSelect from "./DateSelect";
 
-export default ({ testTimetable, termData, sessionData }) => {
-    const [timetableFile, setTimetableFile] = React.useState(testTimetable);
+export default ({ termData, sessionData }) => {
+    const [timetableFile, setTimetableFile] = React.useState();
 
     const handleFileChange = (file) => {
         setTimetableFile(file);
@@ -24,7 +24,7 @@ export default ({ testTimetable, termData, sessionData }) => {
                 Calendar to iCal
             </Typography>
             <Typography
-                variant="body"
+                variant="body1"
                 sx={{
                     fontWeight: 500,
                     padding: "1rem",

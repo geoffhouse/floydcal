@@ -11,7 +11,16 @@ const theme = createTheme({
     typography: {
         fontFamily: lato.style.fontFamily,
     },
-
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                p: {
+                    marginTop: "0.5rem",
+                    marginBottom: "0.5rem",
+                },
+            },
+        },
+    },
     palette: {
         mode: "light",
         primary: {
