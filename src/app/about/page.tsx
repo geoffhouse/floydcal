@@ -66,6 +66,10 @@ const page = () => {
                         <a href="https://github.com/geoffhouse/floydcal">https://github.com/geoffhouse/floydcal</a>)
                     </p>
                     <p>
+                        I've enabled analytics in Vercel - just so I can see if this page is being used. I'm not going
+                        to do anything else with this information.
+                    </p>
+                    <p>
                         All data is stored exclusively in your browser; nothing is ever uploaded to the server. When you
                         close the webpage, your data is gone.
                     </p>
