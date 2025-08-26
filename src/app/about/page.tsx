@@ -60,7 +60,7 @@ const page = () => {
             <Paper sx={{ padding: "1rem" }}>
                 <Typography variant="h5">Privacy</Typography>
                 <Stack sx={{ textAlign: "left" }}>
-                    <p>I have absolutely no interest in your data.</p>
+                    <p>I have absolutely no interest in (and no access to) your data.</p>
                     <p>
                         Feel free to review the code on GitHub to verify that I&rsquo;m not doing anything crazy! (
                         <a href="https://github.com/geoffhouse/floydcal">https://github.com/geoffhouse/floydcal</a>)
