@@ -4,14 +4,26 @@ import { Stack, Typography, Box, Alert } from "@mui/material";
 import FileUpload from "./FileUpload";
 import Step from "./Step";
 import DateSelect from "./DateSelect";
+import YearSelect from "./YearSelect";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
+import CalendarHelp from "./CalendarHelp";
 
 const PageHome = ({ termData, sessionData }) => {
     const [timetableFile, setTimetableFile] = React.useState();
+    const [year, setYear] = React.useState();
 
     const handleFileChange = (file) => {
         setTimetableFile(file);
     };
+
+    const handleYearSelect = (year) => {
+        setYear(year);
+        // replace registrationGroup
+        const form = timetableFile.registrationGroup.slice(-1);
+        setTimetableFile({ ...timetableFile, yearGroup: year.toString(), registrationGroup: `${year}${form}` });
+    };
+
+    console.log(timetableFile);
 
     return (
         <Stack>
@@ -44,15 +56,23 @@ const PageHome = ({ termData, sessionData }) => {
                     padding: "1rem",
                 }}
             >
-                Just upload your file, select a date range and import it into your favourite online calendar. <br />
+                Upload your file, select the year and date range, then import it into your favourite online calendar.
+                <br />
                 Voila - your weekly timetable!
             </Typography>
+            <CalendarHelp />
             <Step index={1}>
                 <FileUpload onFileChange={handleFileChange} />
             </Step>
 
             {timetableFile && (
                 <Step index={2}>
+                    <YearSelect timetableFile={timetableFile} onYearSelect={handleYearSelect} />
+                </Step>
+            )}
+
+            {timetableFile && year && (
+                <Step index={3}>
                     <DateSelect timetableFile={timetableFile} termData={termData} sessionData={sessionData} />
                 </Step>
             )}

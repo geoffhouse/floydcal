@@ -86,7 +86,7 @@ const FileUpload = ({ onFileChange }) => {
             />
             {isValid === true && (
                 <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
-                    Timetable loaded for {fileDetails.name}, registration group {fileDetails.registrationGroup}
+                    Timetable loaded ok
                 </Alert>
             )}
             {isValid === false && (
