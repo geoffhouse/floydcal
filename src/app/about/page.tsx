@@ -50,6 +50,8 @@ const page = () => {
                             <Image
                                 src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
                                 alt="Buy Me a Coffee"
+                                width="217"
+                                height="60"
                                 style={{ height: "60px !important", width: "217px !important" }}
                             />
                         </a>
