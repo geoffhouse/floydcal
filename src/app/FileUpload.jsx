@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
-import { Button, Stack } from "@mui/material";
-import Alert from "@mui/material/Alert";
+import { Button, Stack, Alert } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import fileParser from "@/services/file-parser";
 

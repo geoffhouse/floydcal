@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, Box, Alert } from "@mui/material";
 import FileUpload from "./FileUpload";
 import Step from "./Step";
 import DateSelect from "./DateSelect";
+import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 
 const PageHome = ({ termData, sessionData }) => {
     const [timetableFile, setTimetableFile] = React.useState();
@@ -14,6 +15,19 @@ const PageHome = ({ termData, sessionData }) => {
 
     return (
         <Stack>
+            <Box
+                sx={{
+                    display: {
+                        xs: "block",
+                        sm: "none",
+                    },
+                    marginBottom: "1rem",
+                }}
+            >
+                <Alert icon={<WarningAmberIcon fontSize="inherit" />} severity="warning">
+                    This site is best used on desktop devices and may not work on mobiles.
+                </Alert>
+            </Box>
             <Typography
                 variant="h4"
                 sx={{
