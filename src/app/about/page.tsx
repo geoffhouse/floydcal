@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography, Paper, Stack } from "@mui/material";
+import { Typography, Paper, Stack, Box } from "@mui/material";
 import TechStack from "../TechStack";
 import Image from "next/image";
 import Obfuscate from "react-obfuscate";
@@ -25,9 +25,24 @@ const page = () => {
 
             <Paper sx={{ padding: "1rem" }}>
                 <Typography variant="h5">About Me</Typography>
-                <Stack direction="row" spacing={2} alignItems="flex-start">
-                    <Image src="/geoff.png" alt="Geoff House" width={200} height={200} />
-                    <Stack sx={{ textAlign: "left" }}>
+                <Stack
+                    spacing={2}
+                    alignItems="flex-start"
+                    sx={{
+                        flexDirection: "row",
+                        "@media (max-width: 600px)": {
+                            flexDirection: "column",
+                        },
+                    }}
+                >
+                    <Box sx={{ width: "100%" }}>
+                        <Image src="/geoff.png" alt="Geoff House" width={200} height={200} />
+                    </Box>
+                    <Stack
+                        sx={{
+                            textAlign: "left",
+                        }}
+                    >
                         <p>
                             Hi, I&rsquo;m Geoff House! My son is a student at Sir Henry Floyd Grammar School, and I
                             spent a few days working on this project.
