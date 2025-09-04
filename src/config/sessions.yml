@@ -3,9 +3,9 @@ sessions:
       end: 10:05
     - start: 10:05
       end: 11:05
-    - start: 11:35
-      end: 12:35
-    - start: 13:30
-      end: 14:30
-    - start: 14:30
-      end: 15:30
+    - start: 11:30
+      end: 12:30
+    - start: 13:20
+      end: 14:20
+    - start: 14:20
+      end: 15:20
