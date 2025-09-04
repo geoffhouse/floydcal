@@ -29,11 +29,11 @@ const lessonIterator = (termDays, timetableFile, sessionData) => {
             const startTime = convertTime(selectedSession.start, baseDate);
             const endTime = convertTime(selectedSession.end, baseDate);
             const title = [eachLesson.name];
-            if (eachLesson.staff) {
-                title.push(eachLesson.staff);
-            }
             if (eachLesson.room) {
                 title.push(eachLesson.room);
+            }
+            if (eachLesson.staff) {
+                title.push(eachLesson.staff);
             }
 
             lessons.push({
